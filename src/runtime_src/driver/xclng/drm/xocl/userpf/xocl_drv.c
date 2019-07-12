@@ -494,7 +494,8 @@ int xocl_p2p_mem_reserve(struct xocl_dev *xdev)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 16, 0) || RHEL_P2P_SUPPORT_76
 	xdev->pgmap.ref = &xdev->ref;
 	memcpy(&xdev->pgmap.res, &res, sizeof(struct resource));
-	xdev->pgmap.altmap_valid = false;
+//	xdev->pgmap.altmap_valid = false; 
+//	commented out to make it work at rStor 4.14.0-115 version
 #endif
 
 /* Ubuntu 16.04 kernel_ver 4.4.0.116*/
